@@ -1,0 +1,33 @@
+questions = ('How many elements are there in the periodic table?:',
+            'Which is the capital city of Japan?:',
+            'Which is the fastest animal in the world?:',
+            'How many countries are there in the world?:',
+            'Who is the fastest man in the world?:')
+options = (('A.120','B.125','C.145','D.200'),
+           ('A.kathmandu','B.Delhi','C.Tokyo','D.Jeruslam'),
+           ('A.Rabbit','B.Snail','C.Cheeta','D.python'),
+           ('A.200','B.198','C.50','D.194'),
+           ('A.Usain','B.Anna','C.Hiran','D.Jamal'))
+answers =('A','C','C','B','A')
+guesses = []
+score = 0
+question_no = 0
+
+for question in questions:
+    print('*****************************************')
+    print(question)
+
+    for option in options[question_no]:
+        print(option)
+
+    guess = input('Enter you answers as (A,B,C,D)').upper()
+    guesses.append(guess)
+    if guess == answers[question_no]:
+        score += 10
+        print('CORRECT')
+    else:
+        print('INCORRECT')
+        print(f'the correct answer is {answers[question_no]}')
+    question_no += 1
+print('***************************')
+print(f'your final score is {score}.')
